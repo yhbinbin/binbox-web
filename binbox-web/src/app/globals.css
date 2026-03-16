@@ -1,0 +1,50 @@
+@import "tailwindcss";
+@import "../styles/theme.css";
+
+@theme inline {
+  /* 基础色 */
+  --color-background: var(--bg-primary);
+  --color-foreground: var(--text-primary);
+  
+  /* 主题强调色 */
+  --color-neon-pink: var(--accent-primary);
+  --color-neon-teal: var(--accent-secondary);
+  --color-neon-green: var(--accent-tertiary);
+  
+  /* 字体 */
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-mono);
+  --font-display: var(--font-display);
+}
+
+html {
+  background-color: var(--bg-primary);
+}
+
+body {
+  background-color: var(--bg-primary);
+  background-image: var(--gradient-bg);
+  color: var(--text-primary);
+  font-family: var(--font-body), system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+main {
+  position: relative;
+}
+
+/* Custom Slider Thumb Colors */
+[style*="--slider-accent"]::-webkit-slider-thumb {
+  background: var(--slider-accent);
+  border-color: var(--slider-accent);
+}
+[style*="--slider-accent"]::-moz-range-thumb {
+  background: var(--slider-accent);
+  border-color: var(--slider-accent);
+}
+
+/* Select dropdown styling for dark theme */
+select option {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}

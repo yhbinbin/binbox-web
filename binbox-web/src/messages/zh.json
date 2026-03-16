@@ -1,0 +1,133 @@
+{
+  "common": {
+    "siteName": "binbox斌盒子",
+    "siteNameShort": "斌盒子",
+    "digitalMusicLab": "数字音乐实验室"
+  },
+  "metadata": {
+    "title": "binbox斌盒子 - 数字音乐实验室",
+    "description": "binbox斌盒子是一个数字音乐实验室，融合了90年代的怀旧情怀与现代网页音频实验。"
+  },
+  "navigation": {
+    "home": "首页",
+    "music": "音乐",
+    "lab": "实验室",
+    "tutorials": "教程",
+    "samples": "采样",
+    "archive": "档案"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "数字音乐实验室",
+      "title": "binbox 是一个创意网页音频工作室，专注于 VHS 模糊质感、CRT 荧光效果和 PS1 时代的节奏实验。",
+      "description": "这个项目融合了艺术家作品集与互动实验室。探索新发行的音乐、创建打击节奏，步入复古未来的游乐场，在这里代码与音乐碰撞。",
+      "enterLab": "进入实验室",
+      "listen": "聆听"
+    },
+    "highlights": {
+      "featured": "精选",
+      "open": "打开",
+      "breakbeatLab": {
+        "title": "Breakbeat 实验室",
+        "description": "拼接丛林节奏，学习模式引擎的工作原理。"
+      },
+      "tapeArchive": {
+        "title": "磁带档案",
+        "description": "精选的文物、扫描件和来自数字地下的音频记忆。"
+      },
+      "samples": {
+        "title": "采样",
+        "description": "未来声音包、工具包和怀旧音效设计的纹理素材。"
+      }
+    },
+    "mission": {
+      "eyebrow": "使命",
+      "title": "模拟灵魂，数字质感",
+      "description": "binbox 记录了一种建立在打击节奏科学、音频黑客和过时硬件柔和光芒之上的音乐实践。每一个实验和教程都被设计为开放、可触碰和可混音的。"
+    },
+    "currentFocus": {
+      "title": "当前重点",
+      "items": {
+        "webAudio": "使用 Tone.js 构建 Web Audio 乐器",
+        "streaming": "发布新的丛林和打击节奏草稿",
+        "archiving": "归档复古数字文化"
+      }
+    }
+  },
+  "lab": {
+    "eyebrow": "互动",
+    "title": "实验室",
+    "description": "实验、原型和创意编程作品展示区。每个实验都是独立模块，可以扩展成完整乐器。",
+    "launch": "启动",
+    "experiments": {
+      "breakbeatGenerator": {
+        "title": "Breakbeat 生成器",
+        "description": "基于 Tone.js 的16步音序引擎，专为丛林节奏调校。"
+      },
+      "breakSlicer": {
+        "title": "Break 切片器",
+        "description": "将经典 break 切成16段并现场重排。"
+      },
+      "musicTheoryKeyboard": {
+        "title": "音乐理论键盘",
+        "description": "通过钢琴键盘探索和弦、调式与五度圈。"
+      }
+    },
+    "breakbeatGenerator": {
+      "eyebrow": "Breakbeat 生成器 – binbox 实验室",
+      "title": "可演奏的Jungle鼓机",
+      "description": "使用16步音序器、摇摆律动和人性化时序构建你自己的碎拍节奏。实时切换步进来塑造律动。",
+      "hitsLoaded": "16步中已加载 {count} 个触发点",
+      "play": "播放",
+      "stop": "停止",
+      "generatePattern": "生成节拍",
+      "exportMidi": "导出 MIDI",
+      "humanize": "人性化",
+      "tempo": "速度",
+      "swing": "摇摆",
+      "drumKit": "鼓组",
+      "grooveNote": "核心律动：军鼓落在第5和第13步，幽灵底鼓，快速踩镲填充，摇摆调校至16分音符。"
+    },
+    "breakSlicer": {
+      "eyebrow": "Break 切片器 – binbox 实验室",
+      "title": "互动 Break 切片器",
+      "description": "加载经典 breakbeat 并重新排列切片，生成新的丛林节奏。点击切片块切换位置，按住 Shift 可反向切换。",
+      "sliceOrder": "切片顺序",
+      "play": "播放",
+      "stop": "停止",
+      "randomize": "随机排序",
+      "jungleChop": "丛林随机切片",
+      "breakSelect": "Break 选择",
+      "tempo": "速度",
+      "note": "提示：为每一步调整音高，快速制造连击和切分填充。"
+    }
+  },
+  "music": {
+    "eyebrow": "发行",
+    "title": "音乐",
+    "description": "新发行、现场演出和实验混音将在这里呈现。期待磁带质感、PS1 氛围和打击节奏的律动。",
+    "placeholder": "在此嵌入最新 EP、播放列表链接或流媒体播放器。此板块已为未来扩展做好准备。"
+  },
+  "tutorials": {
+    "eyebrow": "学习",
+    "title": "教程",
+    "description": "关于 Web Audio、复古音效设计和创意编程工作流程的指南。",
+    "placeholder": "发布关于 Tone.js、采样器设计或打击节奏理论的深度文章。此区域已为长篇内容和系列文章做好准备。"
+  },
+  "samples": {
+    "eyebrow": "商店",
+    "title": "采样",
+    "description": "未来的声音包、鼓组套件和音色素材商店。",
+    "placeholder": "在准备好发布作品时，添加产品卡片、Stripe 支付集成或预购候补名单。"
+  },
+  "archive": {
+    "eyebrow": "记忆",
+    "title": "档案",
+    "description": "扫描件、混音带和启发 binbox 的复古数字遗物。",
+    "placeholder": "收集 VHS 截图、CRT 屏幕截图和内页说明。这是你的数字怀旧博物馆。",
+    "wip": {
+      "title": "本模块开发中",
+      "description": "档案模块正在开发中，即将上线。这里将收录 VHS 截图、复古数字文化和灯箱效果展示。"
+    }
+  }
+}

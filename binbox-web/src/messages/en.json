@@ -1,0 +1,133 @@
+{
+  "common": {
+    "siteName": "binbox",
+    "siteNameShort": "binbox",
+    "digitalMusicLab": "Digital Music Lab"
+  },
+  "metadata": {
+    "title": "binbox - digital music lab",
+    "description": "binbox is a digital music lab blending 90s nostalgia with modern web audio experiments."
+  },
+  "navigation": {
+    "home": "Home",
+    "music": "Music",
+    "lab": "Lab",
+    "tutorials": "Tutorials",
+    "samples": "Samples",
+    "archive": "Archive"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Digital Music Lab",
+      "title": "binbox is a creative web audio studio for VHS fuzz, CRT glow, and PS1-era rhythm experiments.",
+      "description": "The project blends artist portfolio with an interactive lab. Explore new releases, build breakbeats, and step into a retro-future playground where code and music collide.",
+      "enterLab": "Enter the Lab",
+      "listen": "Listen"
+    },
+    "highlights": {
+      "featured": "Featured",
+      "open": "Open",
+      "breakbeatLab": {
+        "title": "Breakbeat Lab",
+        "description": "Patch together jungle rhythms and learn how the pattern engine works."
+      },
+      "tapeArchive": {
+        "title": "Tape Archive",
+        "description": "Curated artifacts, scans, and audio memories from the digital underground."
+      },
+      "samples": {
+        "title": "Samples",
+        "description": "Future sound packs, toolkits, and textures for nostalgic sound design."
+      }
+    },
+    "mission": {
+      "eyebrow": "Mission",
+      "title": "Analog soul, digital grit",
+      "description": "binbox documents a music practice built on breakbeat science, audio hacking, and the soft glow of outdated hardware. Every experiment and tutorial is designed to be open, tactile, and remixable."
+    },
+    "currentFocus": {
+      "title": "Current Focus",
+      "items": {
+        "webAudio": "Building Web Audio instruments with Tone.js",
+        "streaming": "Streaming new jungle and breakbeat sketches",
+        "archiving": "Archiving vintage digital culture"
+      }
+    }
+  },
+  "lab": {
+    "eyebrow": "Interactive",
+    "title": "Lab",
+    "description": "Experiments, prototypes, and creative coding sketches live here. Each experiment has its own module so it can grow into a full instrument.",
+    "launch": "Launch",
+    "experiments": {
+      "breakbeatGenerator": {
+        "title": "Breakbeat Generator",
+        "description": "A Tone.js-powered 16-step pattern engine tuned for jungle energy."
+      },
+      "breakSlicer": {
+        "title": "Break Slicer",
+        "description": "Slice a classic break into 16 parts and rearrange it live."
+      },
+      "musicTheoryKeyboard": {
+        "title": "Music Theory Keyboard",
+        "description": "Play chords, modes, and a circle of fifths with a responsive piano UI."
+      }
+    },
+    "breakbeatGenerator": {
+      "eyebrow": "Breakbeat Generator – binbox lab",
+      "title": "Playable Jungle Drum Machine",
+      "description": "Build your own breakbeat with a 16-step sequencer, shuffle swing, and humanized timing. Toggle steps to sculpt the groove in real time.",
+      "hitsLoaded": "{count} hits loaded across 16 steps",
+      "play": "Play",
+      "stop": "Stop",
+      "generatePattern": "Generate Pattern",
+      "exportMidi": "Export MIDI",
+      "humanize": "Humanize",
+      "tempo": "Tempo",
+      "swing": "Swing",
+      "drumKit": "Drum Kit",
+      "grooveNote": "Core groove: snare on steps 5 and 13, ghost kicks, fast hat fills, and shuffle tuned to 16th notes."
+    },
+    "breakSlicer": {
+      "eyebrow": "Break Slicer – binbox lab",
+      "title": "Interactive Break Slicer",
+      "description": "Load a classic breakbeat and rearrange the slices into fresh jungle rhythms. Click a slice block to cycle its position, shift-click to go backwards.",
+      "sliceOrder": "Slice order",
+      "play": "Play",
+      "stop": "Stop",
+      "randomize": "Randomize Pattern",
+      "jungleChop": "Random Jungle Chop",
+      "breakSelect": "Break Select",
+      "tempo": "Tempo",
+      "note": "Tip: Adjust pitch per step for quick stutters and machine-gun fills."
+    }
+  },
+  "music": {
+    "eyebrow": "Releases",
+    "title": "Music",
+    "description": "New releases, live sessions, and experimental mixes will live here. Expect cassette crunch, PS1 ambience, and breakbeat momentum.",
+    "placeholder": "Drop in your latest EP embeds, playlist links, or streaming widgets. This section is ready for future expansion."
+  },
+  "tutorials": {
+    "eyebrow": "Learn",
+    "title": "Tutorials",
+    "description": "Guides on Web Audio, retro sound design, and creative coding workflows.",
+    "placeholder": "Publish deep dives on Tone.js, sampler design, or breakbeat theory. This area is ready for longform content and series."
+  },
+  "samples": {
+    "eyebrow": "Store",
+    "title": "Samples",
+    "description": "A future storefront for sound packs, drum kits, and texture bundles.",
+    "placeholder": "Add product cards, Stripe integration, or pre-order waitlists when you are ready to launch packs."
+  },
+  "archive": {
+    "eyebrow": "Memory",
+    "title": "Archive",
+    "description": "Scans, mixtapes, and retro digital ephemera that inspire binbox.",
+    "placeholder": "Collect VHS captures, CRT screenshots, and liner notes. This is your museum of digital nostalgia.",
+    "wip": {
+      "title": "Module Under Development",
+      "description": "The Archive module is currently under development and will be available soon. This section will feature VHS captures, vintage digital culture, and lightbox gallery displays."
+    }
+  }
+}
