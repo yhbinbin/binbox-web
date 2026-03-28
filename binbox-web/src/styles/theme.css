@@ -5,61 +5,59 @@
 
 /* ---------------------------------------------
    Theme: Vaporwave (默认)
-   复古蒸汽波 - 霓虹粉、青色、紫色调
+   复古蒸汽波 - 紫色为主，dx7蓝，juno-60红蓝，酒店跑车椰树度假vhs元素
    --------------------------------------------- */
 :root,
 [data-theme="vaporwave"] {
-  /* 基础色 */
-  --bg-primary: #05060d;
-  --bg-secondary: #0b0f1f;
-  --bg-tertiary: #12162a;
-  --bg-card: rgba(0, 0, 0, 0.4);
-  --bg-card-hover: rgba(0, 0, 0, 0.6);
+  /* 基础色 - VHS 暗夜紫 */
+  --bg-primary: #120428;
+  --bg-secondary: #240a4a;
+  --bg-tertiary: #381270;
+  --bg-card: rgba(18, 4, 40, 0.6);
+  --bg-card-hover: rgba(36, 10, 74, 0.8);
 
-  /* 文字色 */
-  --text-primary: #f5f1ff;
-  --text-secondary: #a1a1aa;
-  --text-muted: #71717a;
+  /* 文字色 - VHS 荧光 */
+  --text-primary: #ffd6f9;
+  --text-secondary: #b39ddb;
+  --text-muted: #7e57c2;
 
   /* 主题强调色 */
-  --accent-primary: #ff7bd9;
-  --accent-secondary: #60f8ff;
-  --accent-tertiary: #b8ff6a;
-  --accent-quaternary: #c084fc;
+  --accent-primary: #ff007f; /* Juno-60 红 */
+  --accent-secondary: #00ffff; /* DX7 蓝 */
+  --accent-tertiary: #ffaa00; /* 日落余晖橙 */
+  --accent-quaternary: #9d00ff; /* 霓虹紫 */
 
-  /* 功能色 - shadcn 兼容 */
-  --destructive: #ff4d6a;
+  /* 功能色 */
+  --destructive: #ff3366;
   --destructive-foreground: #ffffff;
-  --success: #22c55e;
-  --success-foreground: #ffffff;
-  --warning: #f59e0b;
+  --success: #00ffcc;
+  --success-foreground: #000000;
+  --warning: #ffb700;
   --warning-foreground: #000000;
-  --info: #3b82f6;
+  --info: #00ccff;
   --info-foreground: #ffffff;
 
   /* 输入框/表单 */
-  --input: rgba(255, 255, 255, 0.08);
-  --input-border: rgba(255, 255, 255, 0.15);
-  --ring: rgba(255, 123, 217, 0.5);
+  --input: rgba(0, 255, 255, 0.1);
+  --input-border: rgba(255, 0, 127, 0.3);
+  --ring: rgba(0, 255, 255, 0.6);
   --radius: 0.5rem;
 
   /* 边框色 */
-  --border-default: rgba(255, 255, 255, 0.1);
-  --border-hover: rgba(96, 248, 255, 0.6);
+  --border-default: rgba(157, 0, 255, 0.2);
+  --border-hover: rgba(0, 255, 255, 0.5);
 
-  /* 渐变背景 */
-  --gradient-bg: radial-gradient(circle at top, rgba(96, 248, 255, 0.12), transparent 40%),
-    radial-gradient(circle at 30% 20%, rgba(255, 123, 217, 0.18), transparent 45%),
-    linear-gradient(180deg, #07080f 0%, #05060d 45%, #0b0f1f 100%);
+  /* 渐变背景 - 椰树落日与网格 */
+  --gradient-bg: linear-gradient(180deg, #120428 0%, #240a4a 40%, rgba(255,0,127,0.1) 80%, rgba(0,255,255,0.05) 100%);
 
   /* 选中高亮 */
-  --selection-bg: rgba(255, 123, 217, 0.35);
-  --selection-text: #fff;
+  --selection-bg: rgba(255, 0, 127, 0.5);
+  --selection-text: #ffffff;
 
   /* 滚动条 */
-  --scrollbar-track: transparent;
-  --scrollbar-thumb: rgba(255, 123, 217, 0.6);
-  --scrollbar-thumb-hover: rgba(255, 123, 217, 0.85);
+  --scrollbar-track: rgba(18, 4, 40, 0.5);
+  --scrollbar-thumb: rgba(0, 255, 255, 0.6);
+  --scrollbar-thumb-hover: rgba(255, 0, 127, 0.8);
 
   /* 兼容旧变量 */
   --background: var(--bg-primary);
@@ -71,61 +69,60 @@
 
 /* ---------------------------------------------
    Theme: Y2K / Frutiger Aero
-   千禧年风格 - 深邃科技蓝、金属银、极光绿
+   千禧年风格 - 光碟、frutigerAero、蓝天草坪、蓝绿橙色msn头像
    --------------------------------------------- */
 [data-theme="y2k"] {
-  /* 基础色 - 深色科技感 */
-  --bg-primary: #0a1628;
-  --bg-secondary: #0f1f3a;
-  --bg-tertiary: #152847;
-  --bg-card: rgba(15, 31, 58, 0.6);
-  --bg-card-hover: rgba(21, 40, 71, 0.8);
+  /* 基础色 - 纯净亚克力质感 */
+  --bg-primary: #e6f2ff;
+  --bg-secondary: #f0f7ff;
+  --bg-tertiary: #ffffff;
+  --bg-card: rgba(255, 255, 255, 0.7);
+  --bg-card-hover: rgba(255, 255, 255, 0.9);
+  
+  /* 毛玻璃效果支持需全局添加 backdrop-filter: blur(x) */
 
-  /* 文字色 */
-  --text-primary: #e8f4fc;
-  --text-secondary: #a8c8e0;
-  --text-muted: #6a9cc0;
+  /* 文字色 - 鲜亮可读 */
+  --text-primary: #003366;
+  --text-secondary: #005bb5;
+  --text-muted: #6699cc;
 
-  /* 主题强调色 - Y2K 科技风 */
-  --accent-primary: #00d4ff;
-  --accent-secondary: #39ff14;
-  --accent-tertiary: #ff9500;
-  --accent-quaternary: #c0c0c0;
+  /* 主题强调色 - MSN / Frutiger Aero 水果色 */
+  --accent-primary: #0088ff; /* 气泡蓝 */
+  --accent-secondary: #33cc33; /* 草坪绿 */
+  --accent-tertiary: #ff9900; /* MSN 橙 */
+  --accent-quaternary: #00cccc; /* 光碟青 */
 
-  /* 功能色 - shadcn 兼容 */
-  --destructive: #ff3b30;
+  /* 功能色 */
+  --destructive: #ff3333;
   --destructive-foreground: #ffffff;
-  --success: #34c759;
+  --success: #33cc33;
   --success-foreground: #ffffff;
   --warning: #ffcc00;
   --warning-foreground: #000000;
-  --info: #5ac8fa;
-  --info-foreground: #000000;
+  --info: #00aaff;
+  --info-foreground: #ffffff;
 
-  /* 输入框/表单 */
-  --input: rgba(0, 212, 255, 0.08);
-  --input-border: rgba(0, 212, 255, 0.2);
-  --ring: rgba(0, 212, 255, 0.5);
-  --radius: 0.375rem;
+  /* 输入框/表单 - 玻璃果冻感 */
+  --input: rgba(255, 255, 255, 0.5);
+  --input-border: rgba(0, 136, 255, 0.3);
+  --ring: rgba(0, 136, 255, 0.4);
+  --radius: 1rem; /* 更圆润 */
 
   /* 边框色 */
-  --border-default: rgba(0, 212, 255, 0.15);
-  --border-hover: rgba(0, 212, 255, 0.5);
+  --border-default: rgba(0, 136, 255, 0.15);
+  --border-hover: rgba(51, 204, 51, 0.5);
 
-  /* 渐变背景 */
-  --gradient-bg: radial-gradient(ellipse at top, rgba(0, 212, 255, 0.15), transparent 50%),
-    radial-gradient(circle at 80% 30%, rgba(57, 255, 20, 0.1), transparent 40%),
-    radial-gradient(circle at 20% 70%, rgba(255, 149, 0, 0.06), transparent 35%),
-    linear-gradient(180deg, #0a1628 0%, #0f1f3a 50%, #152847 100%);
+  /* 渐变背景 - 蓝天白云绿草 */
+  --gradient-bg: linear-gradient(180deg, #b3e0ff 0%, #e6f2ff 50%, #e6ffe6 100%);
 
   /* 选中高亮 */
-  --selection-bg: rgba(0, 212, 255, 0.35);
-  --selection-text: #fff;
+  --selection-bg: rgba(0, 136, 255, 0.3);
+  --selection-text: #003366;
 
   /* 滚动条 */
-  --scrollbar-track: transparent;
-  --scrollbar-thumb: rgba(0, 212, 255, 0.55);
-  --scrollbar-thumb-hover: rgba(0, 212, 255, 0.8);
+  --scrollbar-track: rgba(230, 242, 255, 0.5);
+  --scrollbar-thumb: rgba(0, 136, 255, 0.5);
+  --scrollbar-thumb-hover: rgba(51, 204, 51, 0.7);
 
   /* 兼容旧变量 */
   --background: var(--bg-primary);
@@ -137,61 +134,60 @@
 
 /* ---------------------------------------------
    Theme: Vintage
-   复古怀旧 - 黄油、咖啡、马卡龙、意大利西装风格（浅色）
+   复古怀旧 - 咖啡、马卡龙、法式、意式配色混搭
    --------------------------------------------- */
 [data-theme="vintage"] {
-  /* 基础色 - 温暖奶咖(中等) */
-  --bg-primary: #d5c4ad;
-  --bg-secondary: #cbb99f;
-  --bg-tertiary: #c0ad91;
-  --bg-card: rgba(255, 255, 255, 0.5);
-  --bg-card-hover: rgba(255, 255, 255, 0.7);
+  /* 基础色 - 温暖奶咖，做旧特调纸张色 */
+  --bg-primary: #f4efe6;
+  --bg-secondary: #eaddcb;
+  --bg-tertiary: #dfccb6;
+  --bg-card: rgba(244, 239, 230, 0.85);
+  --bg-card-hover: rgba(255, 255, 255, 0.9);
 
-  /* 文字色 - 加深 */
-  --text-primary: #1a1510;
-  --text-secondary: #3a3228;
-  --text-muted: #5a4d3c;
+  /* 文字色 - 咖啡棕 */
+  --text-primary: #3c2a21;
+  --text-secondary: #5a4033;
+  --text-muted: #8b6b5d;
 
-  /* 主题强调色 - 马卡龙 + 意大利西装(加深) */
-  --accent-primary: #b5656b;
-  --accent-secondary: #4d8a85;
-  --accent-tertiary: #8f6d3a;
-  --accent-quaternary: #7d6490;
+  /* 主题强调色 - 马卡龙与法式意式混搭 */
+  --accent-primary: #c86b85; /* 慕斯覆盆子 */
+  --accent-secondary: #7e9a8f; /* 鼠尾草青 */
+  --accent-tertiary: #e6a57e; /* 奶橘 */
+  --accent-quaternary: #6a6b83; /* 灰蓝紫夜 */
 
-  /* 功能色 - shadcn 兼容 */
-  --destructive: #c0392b;
+  /* 功能色 */
+  --destructive: #b54a4a;
   --destructive-foreground: #ffffff;
-  --success: #27ae60;
+  --success: #6c9a6a;
   --success-foreground: #ffffff;
-  --warning: #d68910;
-  --warning-foreground: #ffffff;
-  --info: #2980b9;
+  --warning: #d99a5b;
+  --warning-foreground: #000000;
+  --info: #5b87a8;
   --info-foreground: #ffffff;
 
   /* 输入框/表单 */
-  --input: rgba(255, 255, 255, 0.5);
-  --input-border: rgba(166, 131, 82, 0.3);
-  --ring: rgba(200, 122, 127, 0.4);
-  --radius: 0.5rem;
+  --input: rgba(255, 255, 255, 0.6);
+  --input-border: rgba(139, 107, 93, 0.2);
+  --ring: rgba(200, 107, 133, 0.4);
+  --radius: 0.375rem;
 
   /* 边框色 */
-  --border-default: rgba(168, 131, 82, 0.3);
-  --border-hover: rgba(200, 122, 127, 0.5);
+  --border-default: rgba(139, 107, 93, 0.15);
+  --border-hover: rgba(126, 154, 143, 0.5);
 
-  /* 渐变背景 */
-  --gradient-bg: radial-gradient(ellipse at top right, rgba(200, 122, 127, 0.15), transparent 50%),
-    radial-gradient(circle at 10% 80%, rgba(107, 163, 158, 0.12), transparent 40%),
-    radial-gradient(circle at 50% 50%, rgba(166, 131, 82, 0.1), transparent 35%),
-    linear-gradient(180deg, #d5c4ad 0%, #cbb99f 50%, #c0ad91 100%);
+  /* 渐变背景 - 香草咖啡柔和过渡 */
+  --gradient-bg: radial-gradient(ellipse at top right, rgba(200, 107, 133, 0.08), transparent 50%),
+    radial-gradient(circle at 10% 80%, rgba(126, 154, 143, 0.1), transparent 40%),
+    linear-gradient(135deg, #f4efe6 0%, #eaddcb 100%);
 
   /* 选中高亮 */
-  --selection-bg: rgba(200, 122, 127, 0.4);
-  --selection-text: #1a1510;
+  --selection-bg: rgba(230, 165, 126, 0.4);
+  --selection-text: #3c2a21;
 
   /* 滚动条 */
-  --scrollbar-track: transparent;
-  --scrollbar-thumb: rgba(166, 131, 82, 0.5);
-  --scrollbar-thumb-hover: rgba(166, 131, 82, 0.75);
+  --scrollbar-track: rgba(223, 204, 182, 0.3);
+  --scrollbar-thumb: rgba(139, 107, 93, 0.4);
+  --scrollbar-thumb-hover: rgba(139, 107, 93, 0.6);
 
   /* 兼容旧变量 */
   --background: var(--bg-primary);
@@ -203,121 +199,121 @@
 
 /* ---------------------------------------------
    Theme: Windows 95
-   经典 Win95 风格 - 灰色、深蓝、青绿、天空蓝
+   经典 Win95 风格 - 像素风、win95的画图软件、蓝屏、绿色壁纸、灰色画框
    --------------------------------------------- */
 [data-theme="win95"] {
-  /* 基础色 - 经典灰 */
-  --bg-primary: #c0c0c0;
-  --bg-secondary: #d4d0c8;
-  --bg-tertiary: #ece9d8;
-  --bg-card: rgba(255, 255, 255, 0.85);
-  --bg-card-hover: rgba(255, 255, 255, 0.95);
+  /* 基础色 - 标准 Win95 灰 */
+  --bg-primary: #008080; /* Win95 经典绿色网格壁纸底色 */
+  --bg-secondary: #006b6b;
+  --bg-tertiary: #008080;
+  --bg-card: #c0c0c0; /* 标准灰色画框/窗口背景 */
+  --bg-card-hover: #dfdfdf;
 
   /* 文字色 */
   --text-primary: #000000;
   --text-secondary: #222222;
   --text-muted: #555555;
 
-  /* 主题强调色 - Win95 经典 */
-  --accent-primary: #000080;
-  --accent-secondary: #008080;
-  --accent-tertiary: #808000;
-  --accent-quaternary: #4a90d9;
+  /* 主题强调色 - Win95 高饱和经典 */
+  --accent-primary: #0000ff; /* 经典深蓝 (比如蓝屏基础色, 画图软件原色) */
+  --accent-secondary: #ff00ff; /* 洋红/品红 */
+  --accent-tertiary: #ffff00; /* 亮黄 */
+  --accent-quaternary: #00ff00; /* 荧光绿 */
 
-  /* 功能色 - shadcn 兼容 */
-  --destructive: #c00000;
+  /* 功能色 */
+  --destructive: #ff0000; /* 纯红 */
   --destructive-foreground: #ffffff;
-  --success: #008000;
+  --success: #008000; /* 深绿 */
   --success-foreground: #ffffff;
-  --warning: #ff8c00;
+  --warning: #ffff00; /* 亮黄 */
   --warning-foreground: #000000;
-  --info: #0066cc;
+  --info: #0000a8; /* 深蓝屏颜色 */
   --info-foreground: #ffffff;
 
-  /* 输入框/表单 */
+  /* 输入框/表单 - 经典内凹效果模拟 */
   --input: #ffffff;
-  --input-border: #808080;
-  --ring: rgba(0, 0, 128, 0.4);
+  --input-border: #808080; /* 下沉黑线 */
+  --ring: transparent; /* 不需要光晕，纯实线选框 */
   --radius: 0;
 
-  /* 边框色 */
-  --border-default: rgba(0, 0, 128, 0.2);
-  --border-hover: rgba(0, 0, 128, 0.5);
+  /* 边框色 - Win95 突起边框模拟使用的外高光和内阴影替代 */
+  --border-default: #808080; 
+  --border-hover: #000000; 
 
-  /* 渐变背景 - 经典天空 */
-  --gradient-bg: linear-gradient(180deg, #87ceeb 0%, #b0d4e8 30%, #c0c0c0 60%, #c0c0c0 100%);
+  /* 渐变背景 - 纯色填涂风格，或轻微点阵感模拟 */
+  --gradient-bg: #008080; /* 默认绿松石底色 */
 
-  /* 选中高亮 */
-  --selection-bg: rgba(0, 0, 128, 0.4);
+  /* 选中高亮 - 经典深蓝框白字 */
+  --selection-bg: #0000a8;
   --selection-text: #ffffff;
 
-  /* 滚动条 */
-  --scrollbar-track: transparent;
-  --scrollbar-thumb: rgba(0, 0, 128, 0.55);
-  --scrollbar-thumb-hover: rgba(0, 0, 128, 0.8);
+  /* 滚动条 - Win95 灰色和方块 */
+  --scrollbar-track: #dfdfdf;
+  --scrollbar-thumb: #c0c0c0;
+  --scrollbar-thumb-hover: #808080;
 
   /* 兼容旧变量 */
-  --background: var(--bg-primary);
+  --background: var(--bg-card); /* 使主内容区域像一个打开的窗口 */
   --foreground: var(--text-primary);
-  --neon-pink: var(--accent-tertiary);
-  --neon-teal: var(--accent-secondary);
+  --neon-pink: var(--accent-secondary);
+  --neon-teal: var(--accent-primary);
   --neon-green: var(--accent-quaternary);
 }
 
 /* ---------------------------------------------
    Theme: 中式旧核 (Chinese Retrocore)
-   深灰底、蓝玻璃、白瓷砖、红横幅
+   中式旧核 - 白瓷砖、蓝玻璃、水泥、火红布条这些中国90后怀旧的元素
    --------------------------------------------- */
 [data-theme="cnretro"] {
-  /* 基础色 - 深灰水泥 */
-  --bg-primary: #2a2d30;
-  --bg-secondary: #363a3e;
-  --bg-tertiary: #42474c;
-  --bg-card: rgba(54, 58, 62, 0.8);
-  --bg-card-hover: rgba(66, 71, 76, 0.9);
+  /* 基础色 - 水泥灰底，带一点灰蒙蒙的质感 */
+  --bg-primary: #8a8d91; /* 粗粝水泥墙 */
+  --bg-secondary: #a3a6a9; /* 水泥地坪 */
+  --bg-tertiary: #c0c3c5;
+  --bg-card: rgba(235, 238, 240, 0.9); /* 白瓷砖面板 */
+  --bg-card-hover: #ffffff; /* 高亮白瓷砖 */
 
-  /* 文字色 - 白瓷砖感 */
-  --text-primary: #f0f0f0;
-  --text-secondary: #c8d0d8;
-  --text-muted: #8a9098;
+  /* 文字色 */
+  --text-primary: #111111; /* 黑体字 */
+  --text-secondary: #333333;
+  --text-muted: #666666;
 
-  /* 主题强调色 - 中式旧核(亮蓝+正红) */
-  --accent-primary: #e60012;
-  --accent-secondary: #1a8cff;
-  --accent-tertiary: #f5f0e8;
-  --accent-quaternary: #d4a84b;
+  /* 主题强调色 - 标志性的旧核色彩 */
+  --accent-primary: #d32f2f; /* 褪色红布条 / 红漆标语 */
+  --accent-secondary: #4a90e2; /* 蓝玻璃反光 */
+  --accent-tertiary: #f4d03f; /* 黄漆安全线 / 栏杆黄 */
+  --accent-quaternary: #2e7d32; /* 绿色防盗网 / 绿色漆木门 */
 
-  /* 功能色 - shadcn 兼容 */
-  --destructive: #e60012;
+  /* 功能色 */
+  --destructive: #d32f2f;
   --destructive-foreground: #ffffff;
-  --success: #2e8b57;
+  --success: #2e7d32;
   --success-foreground: #ffffff;
-  --warning: #d4a84b;
+  --warning: #f4d03f;
   --warning-foreground: #000000;
-  --info: #1a8cff;
+  --info: #4a90e2;
   --info-foreground: #ffffff;
 
-  /* 输入框/表单 */
-  --input: rgba(26, 140, 255, 0.1);
-  --input-border: rgba(26, 140, 255, 0.35);
-  --ring: rgba(26, 140, 255, 0.5);
-  --radius: 0.25rem;
+  /* 输入框/表单 - 类似旧式塑料按键或泛黄塑料 */
+  --input: #ebf0f2;
+  --input-border: #666666; /* 粗重黑框味 */
+  --ring: rgba(211, 47, 47, 0.4);
+  --radius: 0; /* 直角边缘 */
 
   /* 边框色 */
-  --border-default: rgba(26, 140, 255, 0.3);
-  --border-hover: rgba(230, 0, 18, 0.6);
+  --border-default: #8a8d91;
+  --border-hover: #d32f2f;
 
-  /* 渐变背景 - 工业水泥质感 */
-  --gradient-bg: linear-gradient(180deg, #2a2d30 0%, #323538 40%, #3a3e42 70%, #42474c 100%);
+  /* 渐变背景 - 极简白瓷砖带水泥缝的想象 */
+  --gradient-bg: linear-gradient(135deg, #a3a6a9 0%, #8a8d91 50%, #76797c 100%);
 
   /* 选中高亮 */
-  --selection-bg: rgba(230, 0, 18, 0.4);
-  --selection-text: #ffffff;
+  --selection-bg: rgba(74, 144, 226, 0.4);
+  --selection-text: #111111;
 
   /* 滚动条 */
-  --scrollbar-track: transparent;
-  --scrollbar-thumb: rgba(26, 140, 255, 0.7);
-  --scrollbar-thumb-hover: rgba(26, 140, 255, 0.9);
+  --scrollbar-track: rgba(138, 141, 145, 0.3);
+  --scrollbar-thumb: #666666;
+  --scrollbar-thumb-hover: #d32f2f;
 
   /* 兼容旧变量 */
   --background: var(--bg-primary);

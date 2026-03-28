@@ -202,7 +202,7 @@ export default function BreakSlicer() {
       <WaveformViewer
         sampleUrl={sampleUrl}
         activeSlice={activeSlice}
-        onSliceHover={handleSlicePreview}
+        onSliceClick={handleSlicePreview}
       />
 
 

@@ -7,26 +7,25 @@ import RegionsPlugin, { Region } from "wavesurfer.js/dist/plugins/regions";
 const SLICE_COUNT = 16;
 
 const getSliceColor = (index: number, active: boolean) => {
-  if (active) return "rgba(255, 123, 217, 0.35)";
-  return index % 2 === 0 ? "rgba(96, 248, 255, 0.12)" : "rgba(255, 255, 255, 0.08)";
+  if (active) return "rgba(236, 72, 153, 0.56)";
+  return index % 2 === 0 ? "rgba(148, 163, 184, 0.18)" : "rgba(100, 116, 139, 0.14)";
 };
 
 type WaveformViewerProps = {
   sampleUrl: string;
   activeSlice: number | null;
-  onSliceHover?: (sliceIndex: number) => void;
+  onSliceClick?: (sliceIndex: number) => void;
 };
 
 export default function WaveformViewer({
   sampleUrl,
   activeSlice,
-  onSliceHover,
+  onSliceClick,
 }: WaveformViewerProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const waveSurferRef = useRef<WaveSurfer | null>(null);
   const regionsRef = useRef<Region[]>([]);
-  const hoverRef = useRef<number | null>(null);
-  const onSliceHoverRef = useRef(onSliceHover);
+  const onSliceClickRef = useRef(onSliceClick);
   const isUnmountingRef = useRef(false);
 
   const regionOptions = useMemo(() => ({
@@ -35,8 +34,8 @@ export default function WaveformViewer({
   }), []);
 
   useEffect(() => {
-    onSliceHoverRef.current = onSliceHover;
-  }, [onSliceHover]);
+    onSliceClickRef.current = onSliceClick;
+  }, [onSliceClick]);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -44,9 +43,9 @@ export default function WaveformViewer({
     const ws = WaveSurfer.create({
       container: containerRef.current,
       height: 120,
-      waveColor: "rgba(255,255,255,0.2)",
-      progressColor: "rgba(96,248,255,0.4)",
-      cursorColor: "rgba(255,123,217,0.8)",
+      waveColor: "rgba(51, 65, 85, 0.96)",
+      progressColor: "rgba(13, 148, 136, 0.92)",
+      cursorColor: "rgba(236, 72, 153, 0.96)",
       barWidth: 2,
       barGap: 1,
       barRadius: 2,
@@ -88,12 +87,12 @@ export default function WaveformViewer({
         label.className =
           "absolute right-2 top-1 text-[10px] uppercase tracking-[0.2em] text-white/80";
         region.element?.appendChild(label);
-        region.element?.addEventListener("mouseenter", () => {
-          if (!onSliceHoverRef.current) return;
-          const now = Date.now();
-          if (hoverRef.current && now - hoverRef.current < 120) return;
-          hoverRef.current = now;
-          onSliceHoverRef.current?.(i);
+        region.element?.addEventListener("click", () => {
+          const duration = ws.getDuration();
+          if (duration > 0) {
+            ws.setTime(start);
+          }
+          onSliceClickRef.current?.(i);
         });
         regionsRef.current.push(region);
       }

@@ -87,7 +87,7 @@ export default function KeyboardControls({ defaultRootOctave = 3 }: KeyboardCont
   return (
     <div className="flex flex-col gap-4">
       <div className="rounded-3xl border border-[var(--border-default)] bg-[var(--bg-card)] p-4">
-        <div className="mb-3 text-xs uppercase tracking-[0.3em] text-[var(--text-muted)]">
+        <div className="mb-3 text-sm uppercase tracking-[0.3em] text-[var(--text-muted)]">
           根音选择
         </div>
         <div className="grid grid-cols-6 gap-2">
@@ -95,7 +95,7 @@ export default function KeyboardControls({ defaultRootOctave = 3 }: KeyboardCont
             <button
               key={note}
               onClick={() => setSelectedRoot(note)}
-              className={`rounded-full border px-3 py-1 text-xs uppercase tracking-[0.2em] transition ${
+              className={`cursor-pointer rounded-full border px-3 py-1 text-xs uppercase tracking-[0.2em] transition ${
                 selectedRoot === note
                   ? "border-[var(--accent-primary)] bg-[var(--accent-primary)] text-[var(--bg-primary)]"
                   : "border-[var(--border-default)] text-[var(--text-secondary)] hover:border-[var(--border-hover)]"
@@ -108,23 +108,23 @@ export default function KeyboardControls({ defaultRootOctave = 3 }: KeyboardCont
       </div>
 
       <div className="rounded-3xl border border-[var(--border-default)] bg-[var(--bg-card)] p-4">
-        <div className="mb-3 text-xs uppercase tracking-[0.3em] text-[var(--text-muted)]">
+        <div className="mb-3 text-sm uppercase tracking-[0.3em] text-[var(--text-muted)]">
           三和弦
         </div>
         <div className="flex flex-col gap-2">
           {triads.map((chord) => (
-            <div key={chord.name} className="flex items-center justify-between gap-2 text-xs">
+            <div key={chord.name} className="flex flex-wrap items-center justify-between gap-2 text-sm">
               <div className="text-[var(--text-primary)]">{chord.symbol}</div>
               <div className="font-mono text-[var(--text-muted)]">{chord.notes.join(" - ")}</div>
               <div className="flex gap-1">
                 <button
-                  className="rounded-full border border-[var(--border-default)] px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-[var(--text-secondary)] transition hover:border-[var(--border-hover)]"
+                  className="cursor-pointer rounded-full border border-[var(--border-default)] px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-[var(--text-secondary)] transition hover:border-[var(--border-hover)]"
                   onClick={() => handlePlayChord(chord.notesWithOctave)}
                 >
                   齐奏
                 </button>
                 <button
-                  className="rounded-full border border-[var(--border-default)] px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-[var(--text-secondary)] transition hover:border-[var(--border-hover)]"
+                  className="cursor-pointer rounded-full border border-[var(--border-default)] px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-[var(--text-secondary)] transition hover:border-[var(--border-hover)]"
                   onClick={() => handlePlayArpeggio(chord.notesWithOctave)}
                 >
                   分解
@@ -136,23 +136,23 @@ export default function KeyboardControls({ defaultRootOctave = 3 }: KeyboardCont
       </div>
 
       <div className="rounded-3xl border border-[var(--border-default)] bg-[var(--bg-card)] p-4">
-        <div className="mb-3 text-xs uppercase tracking-[0.3em] text-[var(--text-muted)]">
+        <div className="mb-3 text-sm uppercase tracking-[0.3em] text-[var(--text-muted)]">
           七和弦
         </div>
         <div className="flex flex-col gap-2">
           {seventhChords.map((chord) => (
-            <div key={chord.name} className="flex items-center justify-between gap-2 text-xs">
+            <div key={chord.name} className="flex flex-wrap items-center justify-between gap-2 text-sm">
               <div className="text-[var(--text-primary)]">{chord.symbol}</div>
               <div className="font-mono text-[var(--text-muted)]">{chord.notes.join(" - ")}</div>
               <div className="flex gap-1">
                 <button
-                  className="rounded-full border border-[var(--border-default)] px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-[var(--text-secondary)] transition hover:border-[var(--border-hover)]"
+                  className="cursor-pointer rounded-full border border-[var(--border-default)] px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-[var(--text-secondary)] transition hover:border-[var(--border-hover)]"
                   onClick={() => handlePlayChord(chord.notesWithOctave)}
                 >
                   齐奏
                 </button>
                 <button
-                  className="rounded-full border border-[var(--border-default)] px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-[var(--text-secondary)] transition hover:border-[var(--border-hover)]"
+                  className="cursor-pointer rounded-full border border-[var(--border-default)] px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-[var(--text-secondary)] transition hover:border-[var(--border-hover)]"
                   onClick={() => handlePlayArpeggio(chord.notesWithOctave)}
                 >
                   分解
@@ -164,23 +164,23 @@ export default function KeyboardControls({ defaultRootOctave = 3 }: KeyboardCont
       </div>
 
       <div className="rounded-3xl border border-[var(--border-default)] bg-[var(--bg-card)] p-4">
-        <div className="mb-3 text-xs uppercase tracking-[0.3em] text-[var(--text-muted)]">
+        <div className="mb-3 text-sm uppercase tracking-[0.3em] text-[var(--text-muted)]">
           七大中古调式
         </div>
         <div className="flex flex-col gap-2">
           {westernModes.map((mode) => (
-            <div key={mode.symbol} className="flex items-center justify-between gap-2 text-xs">
+            <div key={mode.symbol} className="flex flex-wrap items-center justify-between gap-2 text-sm">
               <div className="text-[var(--text-primary)]">{mode.modeName}</div>
               <div className="font-mono text-[var(--text-muted)]">{mode.notes.join(" - ")}</div>
               <div className="flex gap-1">
                 <button
-                  className="rounded-full border border-[var(--border-default)] px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-[var(--text-secondary)] transition hover:border-[var(--border-hover)]"
+                  className="cursor-pointer rounded-full border border-[var(--border-default)] px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-[var(--text-secondary)] transition hover:border-[var(--border-hover)]"
                   onClick={() => handlePlayMode(mode.notesWithOctave, false)}
                 >
                   升序
                 </button>
                 <button
-                  className="rounded-full border border-[var(--border-default)] px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-[var(--text-secondary)] transition hover:border-[var(--border-hover)]"
+                  className="cursor-pointer rounded-full border border-[var(--border-default)] px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-[var(--text-secondary)] transition hover:border-[var(--border-hover)]"
                   onClick={() => handlePlayMode(mode.notesWithOctave, true)}
                 >
                   降序
@@ -192,12 +192,12 @@ export default function KeyboardControls({ defaultRootOctave = 3 }: KeyboardCont
       </div>
 
       <div className="rounded-3xl border border-[var(--border-default)] bg-[var(--bg-card)] p-4">
-        <div className="mb-3 text-xs uppercase tracking-[0.3em] text-[var(--text-muted)]">
+        <div className="mb-3 text-sm uppercase tracking-[0.3em] text-[var(--text-muted)]">
           中国传统五声调式
         </div>
         <div className="flex flex-col gap-2">
           {chineseModes.map((mode) => (
-            <div key={mode.symbol} className="flex items-center justify-between gap-2 text-xs">
+            <div key={mode.symbol} className="flex flex-wrap items-center justify-between gap-2 text-sm">
               <div className="text-[var(--text-primary)]">{mode.modeName}</div>
               <div className="font-mono text-[var(--text-muted)]">{mode.notes.join(" - ")}</div>
               <div className="flex gap-1">

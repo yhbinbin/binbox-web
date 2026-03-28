@@ -1,6 +1,5 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import Container from '@/components/ui/Container';
-import SectionHeading from '@/components/ui/SectionHeading';
+import ContentLayout from '@/components/layout/ContentLayout';
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -12,15 +11,19 @@ export default async function SamplesPage({ params }: Props) {
   const t = await getTranslations('samples');
 
   return (
-    <Container className="space-y-10 py-16">
-      <SectionHeading
-        eyebrow={t('eyebrow')}
-        title={t('title')}
-        description={t('description')}
-      />
-      <div className="rounded-3xl border border-[var(--border-default)] bg-[var(--bg-card)] p-6 text-sm text-[var(--text-secondary)]">
-        <p>{t('placeholder')}</p>
-      </div>
-    </Container>
+    <ContentLayout className="space-y-8">
+      <p className="text-xs uppercase tracking-[0.4em] text-[var(--accent-secondary)]">
+        {t('eyebrow')}
+      </p>
+      <h1 className="text-3xl font-semibold uppercase tracking-[0.2em] text-[var(--accent-primary)] md:text-4xl">
+        {t('title')}
+      </h1>
+      <p className="text-base leading-relaxed text-[var(--text-secondary)] md:text-lg">
+        {t('description')}
+      </p>
+      <p className="text-sm text-[var(--text-secondary)] md:text-base">
+        {t('placeholder')}
+      </p>
+    </ContentLayout>
   );
 }

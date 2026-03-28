@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useCallback } from "react";
 import {
   normalizeNoteName,
   getMajorTriad,
@@ -77,18 +77,22 @@ export default function CircleOfFifths({ playMode = "root" }: CircleOfFifthsProp
     y: 0,
     content: "",
   });
+  const [hovered, setHovered] = useState<{
+    ring: "outer" | "inner" | null;
+    index: number | null;
+  }>({ ring: null, index: null });
+  const radiiRef = useRef({ outer: 220, inner: 130 });
 
   const { pressKeys, releaseAllKeys } = useKeyboardStore();
   const outerKeys = outerKeysRef.current;
   const innerKeys = innerKeysRef.current;
 
-  const innerColors = new Array(12).fill("#2d3748");
   const outerGradientColors = [
     "#3b82f6", "#2563eb", "#1d4ed8", "#1e40af", "#1e3a8a", "#312e81",
     "#4c1d95", "#581c87", "#701a75", "#831843", "#881337", "#9f1239",
   ];
 
-  useEffect(() => {
+  const drawCircleOfFifths = useCallback(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -97,15 +101,17 @@ export default function CircleOfFifths({ playMode = "root" }: CircleOfFifthsProp
 
     const centerX = canvas.width / 2;
     const centerY = canvas.height / 2;
-    const outerRadius = 220;
-    const innerRadius = 130;
+    const outerRadius = Math.min(centerX, centerY) - 20;
+    const innerRadius = outerRadius * 0.58;
+    radiiRef.current = { outer: outerRadius, inner: innerRadius };
 
     const drawSector = (
       startAngle: number,
       endAngle: number,
       inner: number,
       outer: number,
-      color: string
+      color: string,
+      isHovered: boolean
     ) => {
       ctx.beginPath();
       ctx.moveTo(
@@ -121,7 +127,7 @@ export default function CircleOfFifths({ playMode = "root" }: CircleOfFifthsProp
       ctx.closePath();
       ctx.fillStyle = color;
       ctx.fill();
-      ctx.strokeStyle = "#52525b";
+      ctx.strokeStyle = isHovered ? "#f472b6" : "#52525b";
       ctx.lineWidth = 1;
       ctx.stroke();
     };
@@ -165,21 +171,46 @@ export default function CircleOfFifths({ playMode = "root" }: CircleOfFifthsProp
       });
     };
 
-    ctx.fillStyle = "#27272a";
+    ctx.fillStyle = "#111827";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    const outerColors = [
+      "#1f2937", "#111827", "#0f172a", "#1e1b4b", "#1f2937", "#0f172a",
+      "#111827", "#1f2937", "#0f172a", "#1e1b4b", "#111827", "#1f2937",
+    ];
+    const innerColors = new Array(12).fill("#0f172a");
 
     outerKeys.forEach((_, index) => {
       const startAngle =
         (Math.PI * 2 / outerKeys.length) * index - Math.PI / 2 + Math.PI / 12;
       const endAngle = startAngle + (Math.PI * 2) / outerKeys.length;
-      drawSector(startAngle, endAngle, innerRadius, outerRadius, outerGradientColors[index]);
+      const isHovered =
+        hovered.ring === "outer" && hovered.index === index;
+      const baseColor = outerGradientColors[index] || outerColors[index];
+      drawSector(
+        startAngle,
+        endAngle,
+        innerRadius,
+        outerRadius,
+        isHovered ? "#f472b6" : baseColor,
+        isHovered
+      );
     });
 
     innerKeys.forEach((_, index) => {
       const startAngle =
         (Math.PI * 2 / innerKeys.length) * index - Math.PI / 2 + Math.PI / 12;
       const endAngle = startAngle + (Math.PI * 2) / innerKeys.length;
-      drawSector(startAngle, endAngle, 0, innerRadius, innerColors[index]);
+      const isHovered =
+        hovered.ring === "inner" && hovered.index === index;
+      drawSector(
+        startAngle,
+        endAngle,
+        0,
+        innerRadius,
+        isHovered ? "#60f8ff" : innerColors[index],
+        isHovered
+      );
     });
 
     drawCircle(outerRadius);
@@ -191,18 +222,49 @@ export default function CircleOfFifths({ playMode = "root" }: CircleOfFifthsProp
 
     ctx.beginPath();
     ctx.arc(centerX, centerY, 30, 0, Math.PI * 2);
-    ctx.fillStyle = "#18181b";
+    ctx.fillStyle = "#0b1020";
     ctx.fill();
     ctx.strokeStyle = "#52525b";
     ctx.lineWidth = 2;
     ctx.stroke();
 
     ctx.font = "bold 12px Arial";
-    ctx.fillStyle = "#a1a1aa";
+    ctx.fillStyle = "#94a3b8";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
     ctx.fillText("五度圈", centerX, centerY);
-  }, []);
+  }, [hovered, outerKeys, innerKeys, outerGradientColors]);
+
+  useEffect(() => {
+    drawCircleOfFifths();
+  }, [drawCircleOfFifths]);
+
+  const getKeyFromPoint = (
+    mouseX: number,
+    mouseY: number
+  ): { ring: "outer" | "inner"; index: number } | null => {
+    const canvas = canvasRef.current;
+    if (!canvas) return null;
+    const centerX = canvas.width / 2;
+    const centerY = canvas.height / 2;
+    const dx = mouseX - centerX;
+    const dy = mouseY - centerY;
+    const distance = Math.sqrt(dx * dx + dy * dy);
+    const angle = Math.atan2(dy, dx);
+    const slice = (Math.PI * 2) / outerKeys.length;
+    // Sectors are drawn starting at -PI/2 + PI/12 (half-slice offset).
+    const startAngle = -Math.PI / 2 + slice / 2;
+    const adjustedAngle = (angle - startAngle + Math.PI * 2) % (Math.PI * 2);
+    const index = Math.floor(adjustedAngle / slice);
+
+    if (distance <= radiiRef.current.inner) {
+      return { ring: "inner", index };
+    }
+    if (distance > radiiRef.current.inner && distance <= radiiRef.current.outer) {
+      return { ring: "outer", index };
+    }
+    return null;
+  };
 
   const handleMouseMove = (event: React.MouseEvent<HTMLCanvasElement>) => {
     const canvas = canvasRef.current;
@@ -212,16 +274,15 @@ export default function CircleOfFifths({ playMode = "root" }: CircleOfFifthsProp
     const mouseX = event.clientX - rect.left;
     const mouseY = event.clientY - rect.top;
 
-    const foundKey = [...outerKeys, ...innerKeys].find((key) => {
-      if (key.x !== undefined && key.y !== undefined && key.radius !== undefined) {
-        const dx = mouseX - key.x;
-        const dy = mouseY - key.y;
-        return Math.sqrt(dx * dx + dy * dy) < key.radius;
-      }
-      return false;
-    });
+    const hit = getKeyFromPoint(mouseX, mouseY);
+    const foundKey = hit
+      ? hit.ring === "outer"
+        ? outerKeys[hit.index]
+        : innerKeys[hit.index]
+      : null;
 
-    if (foundKey) {
+    if (foundKey && hit) {
+      setHovered({ ring: hit.ring, index: hit.index });
       setTooltip({
         visible: true,
         x: event.clientX,
@@ -229,11 +290,13 @@ export default function CircleOfFifths({ playMode = "root" }: CircleOfFifthsProp
         content: foundKey.description,
       });
     } else {
+      setHovered({ ring: null, index: null });
       setTooltip((prev) => ({ ...prev, visible: false }));
     }
   };
 
   const handleMouseLeave = () => {
+    setHovered({ ring: null, index: null });
     setTooltip((prev) => ({ ...prev, visible: false }));
   };
 
@@ -245,14 +308,12 @@ export default function CircleOfFifths({ playMode = "root" }: CircleOfFifthsProp
     const mouseX = event.clientX - rect.left;
     const mouseY = event.clientY - rect.top;
 
-    const foundKey = [...outerKeys, ...innerKeys].find((key) => {
-      if (key.x !== undefined && key.y !== undefined && key.radius !== undefined) {
-        const dx = mouseX - key.x;
-        const dy = mouseY - key.y;
-        return Math.sqrt(dx * dx + dy * dy) < key.radius;
-      }
-      return false;
-    });
+    const hit = getKeyFromPoint(mouseX, mouseY);
+    const foundKey = hit
+      ? hit.ring === "outer"
+        ? outerKeys[hit.index]
+        : innerKeys[hit.index]
+      : null;
 
     if (!foundKey) return;
 
@@ -310,9 +371,9 @@ export default function CircleOfFifths({ playMode = "root" }: CircleOfFifthsProp
     <div className="relative flex items-center justify-center">
       <canvas
         ref={canvasRef}
-        width={500}
-        height={500}
-        className="cursor-pointer rounded-lg"
+        width={420}
+        height={420}
+        className="w-full max-w-[420px] cursor-pointer rounded-2xl"
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         onClick={handleClick}

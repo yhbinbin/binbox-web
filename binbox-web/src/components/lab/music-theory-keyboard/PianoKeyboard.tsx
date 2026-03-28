@@ -236,13 +236,13 @@ export default function PianoKeyboard({
       <div className="mb-3 flex items-center gap-3">
         <button
           onClick={() => shiftOctave(-1)}
-          className="rounded-full border border-[var(--border-default)] px-3 py-1 text-xs uppercase tracking-[0.2em] text-[var(--text-secondary)] transition hover:border-[var(--border-hover)]"
+          className="cursor-pointer rounded-full border border-[var(--border-default)] px-3 py-1 text-xs uppercase tracking-[0.2em] text-[var(--text-secondary)] transition hover:border-[var(--border-hover)]"
         >
           ◀ Oct-
         </button>
         <button
           onClick={() => shiftOctave(1)}
-          className="rounded-full border border-[var(--border-default)] px-3 py-1 text-xs uppercase tracking-[0.2em] text-[var(--text-secondary)] transition hover:border-[var(--border-hover)]"
+          className="cursor-pointer rounded-full border border-[var(--border-default)] px-3 py-1 text-xs uppercase tracking-[0.2em] text-[var(--text-secondary)] transition hover:border-[var(--border-hover)]"
         >
           Oct+ ▶
         </button>

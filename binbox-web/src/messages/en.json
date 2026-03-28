@@ -12,9 +12,9 @@
     "home": "Home",
     "music": "Music",
     "lab": "Lab",
-    "tutorials": "Tutorials",
-    "samples": "Samples",
-    "archive": "Archive"
+    "archive": "Articles",
+    "store": "Store",
+    "about": "Contact"
   },
   "home": {
     "hero": {
@@ -129,5 +129,29 @@
       "title": "Module Under Development",
       "description": "The Archive module is currently under development and will be available soon. This section will feature VHS captures, vintage digital culture, and lightbox gallery displays."
     }
+  },
+  "store": {
+    "eyebrow": "Store",
+    "title": "Store",
+    "description": "Sample packs, presets, and learning resources for the binbox sound.",
+    "cta": "Buy"
+  },
+  "about": {
+    "eyebrow": "Contact",
+    "title": "About",
+    "description": "binbox is a digital studio exploring 90s-inspired sound, visual memory, and interactive music tools.",
+    "body": {
+      "p1": "I am a creator moving from frontend development into sound and digital art.",
+      "p2": "Born in 1995, my work is shaped by the digital memory of the 90s — VHS textures, early internet aesthetics, video games, and electronic music played through portable devices.",
+      "p3": "With a background in web development and audio interaction, I have worked on browser-based audio processing, waveform visualization, and voice-related systems. Over time, I began to treat code as an instrument.",
+      "p4": "Through binbox, I am building a personal sound environment — using Web Audio to generate rhythms, slice breaks, and reshape samples directly in the browser.",
+      "p5": "My music focuses on: House / Jungle / Breakbeat / Synth Pop.",
+      "p6": "Rooted in both dance culture and memory.",
+      "p7": "binbox is an evolving experiment, and part of my path toward becoming a musician."
+    },
+    "contact": "Contact & Links",
+    "email": "Email",
+    "github": "GitHub",
+    "social": "Social"
   }
 }
